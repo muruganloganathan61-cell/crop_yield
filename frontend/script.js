@@ -28,7 +28,7 @@ const errorMessage = document.getElementById('errorMessage');
 
 document.addEventListener('DOMContentLoaded', () => {
     form.addEventListener('submit', handleFormSubmit);
-    
+
     // Load data ranges for validation
     loadDataRanges();
 });
@@ -309,7 +309,7 @@ function displaySoilAnalysis(data) {
         itemEl.className = 'nutrient-item';
 
         let levelClass = 'level-optimal';
-        if (nutrient.level === 'Low' || nutrient.level === 'Acidic' || 
+        if (nutrient.level === 'Low' || nutrient.level === 'Acidic' ||
             nutrient.level === 'Very Acidic' || nutrient.level === 'Very Alkaline') {
             levelClass = 'level-low';
         } else if (nutrient.level === 'High' || nutrient.level === 'Alkaline') {
@@ -411,10 +411,10 @@ function validateInputField(input) {
  * Generate mock prediction for offline mode
  */
 function generateMockPrediction(formData) {
-    const baseYield = 5000 + 
-        formData.nitrogen * 20 + 
-        formData.phosphorus * 15 + 
-        formData.potassium * 10 + 
+    const baseYield = 5000 +
+        formData.nitrogen * 20 +
+        formData.phosphorus * 15 +
+        formData.potassium * 10 +
         (8 - Math.abs(formData.ph - 7)) * 200 +
         formData.rainfall * 2;
 
